@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content= "width=device-width, user-scalable=no">
+	<title>Befunge</title>
+	<link rel="icon" href="icon.png">
+	<script defer src="Math.js"></script>
+	<script defer src="Tools.js"></script>
+	<script defer src="index.js"></script>
+	<style type="text/css">
+		body {
+			margin: 25px;
+			overflow: hidden;
+			background-color: #8f8f8f;
+		}
+		button {
+			margin: 5px;
+			margin-top: 2.5px;
+			margin-bottom: 2.5px;
+			background-color: #bfbfbf;
+			border: 2px solid black;
+			font-family: 'Courier', monospace;
+			font-size: 24px;
+			width: 100px;
+			height: 40px;
+		}
+		.column {
+			float: left;
+		}
+		.row {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		textarea {
+			margin: 5px;
+			margin-top: 2.5px;
+			margin-bottom: 2.5px;
+			background-color: #bfbfbf;
+			border: 2px solid black;
+			font-family: 'Courier', monospace;
+			font-size: 24px;
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-top: 3px;
+			padding-bottom: 3px;
+			width: 1125px;
+			height: 60px;
+			resize: none;
+		}
+	</style>
+</head>
+<body></body>
+	<div style="margin: 5px; overflow: scroll;">
+		<canvas id="canvas"></canvas>
+	</div>
+	<div class="row" style="width: 1415px;">
+		<div class="column" style="width: 230px;">
+			<button id="modeButton" type="button" style="width: 210px;" onclick="interpreter.toggleMode()">Mode: Edit</button>
+			<button id="pauseButton" type="button" style="width: 210px;" onclick="interpreter.togglePause()">Run</button>
+			<div class="row">
+				<button id="resetButton" type="button" onclick="interpreter.reset()">Reset</button>
+				<button id="stepButton" type="button" onclick="interpreter.step()">Step</button>
+			</div>
+			<button id="speedButton" type="button" style="width: 210px;" onclick="setSpeed()">Speed: 10000</button>
+		</div>
+		<div class="column" style="width: 1150px">
+			<textarea id="stackDisplay" readonly=true placeholder="The stack is displayed here"></textarea>
+			<textarea id="output" readonly=true placeholder="Output" style="height: 135px; margin-top: -2px;"></textarea>
+		</div>
+	</div>
+</body>
+</html>
